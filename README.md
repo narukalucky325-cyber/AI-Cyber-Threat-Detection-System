@@ -4,7 +4,6 @@ AI-powered cybersecurity system for detecting phishing emails using Machine Lear
 📌 Overview<br>
 The AI Cyber Threat Detection System is a machine learning–powered cybersecurity web application that detects phishing emails and malicious content in real time.<br>
 It uses a Flask-based backend with a trained ML model to analyze text inputs and classify them as safe or phishing threats.<br><br>
-
 🚀 Features<br>
 📧 Phishing Email Detection using AI/ML<br>
 ⚡ Real-time threat classification<br>
@@ -12,7 +11,6 @@ It uses a Flask-based backend with a trained ML model to analyze text inputs and
 🗄️ SQLite database logging for analysis history<br>
 🔐 Threat level prediction (Safe / Suspicious / Dangerous)<br>
 🧠 Machine Learning-based text analysis<br><br>
-
 🧰 Technologies Used<br>
 Python 🐍<br>
 Flask 🌐<br>
@@ -21,26 +19,10 @@ Pandas / NumPy 📊<br>
 SQLAlchemy 🗄️<br>
 HTML5 / CSS3 🎨<br><br>
 
-📂 Project Structure<br>
-AI-Cyber-Threat-Detection-System/<br>
-│<br>
-├── app.py<br>
-├── model/<br>
-│   └── phishing_model.pkl<br>
-├── templates/<br>
-│   ├── index.html<br>
-│   └── result.html<br>
-├── static/<br>
-│   └── style.css<br>
-├── database/<br>
-│   └── logs.db<br>
-├── requirements.txt<br>
-└── README.md<br><br>
-
 ⚙️ Installation & Setup<br><br>
 
 1. Clone Repository<br>
-git clone https://github.com/narukaluckr/AI-Cyber-Threat-Detection-System.git<br>
+git clone https://github.com/narukalucky325-cyber/AI-Cyber-Threat-Detection-System.git<br>
 cd AI-Cyber-Threat-Detection-System<br><br>
 
 2. Install Dependencies<br>
@@ -51,14 +33,12 @@ python app.py<br><br>
 
 4. Open in Browser<br>
 http://127.0.0.1:5000<br><br>
-
 📊 How It Works<br>
 User enters email/text content<br>
 System preprocesses text (cleaning + vectorization)<br>
 ML model predicts phishing probability<br>
 Result is shown as Safe / Phishing / Suspicious<br>
 Data is stored in SQLite database<br><br>
-
 🔮 Future Improvements<br>
 🔥 BERT / Transformer-based AI model<br>
 📩 Gmail API integration for live email scanning<br>
