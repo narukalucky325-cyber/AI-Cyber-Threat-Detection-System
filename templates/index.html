@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Cyber Threat Detection System</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            font-family:Arial, sans-serif;
+            background:#0d1117;
+            color:white;
+        }
+
+        .navbar{
+
+            background:#161b22;
+            padding:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-bottom:2px solid #30363d;
+        }
+
+        .navbar h1{
+
+            color:#58a6ff;
+        }
+
+        .nav-links button{
+
+            padding:10px 20px;
+            margin-left:10px;
+            border:none;
+            background:#21262d;
+            color:white;
+            cursor:pointer;
+            border-radius:5px;
+            transition:0.3s;
+        }
+
+        .nav-links button:hover{
+
+            background:#58a6ff;
+        }
+
+        .container{
+
+            width:80%;
+            margin:auto;
+            margin-top:40px;
+        }
+
+        .dashboard{
+
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+            margin-bottom:40px;
+        }
+
+        .card{
+
+            background:#161b22;
+            padding:25px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 15px rgba(0,0,0,0.5);
+            transition:0.3s;
+        }
+
+        .card:hover{
+
+            transform:scale(1.05);
+        }
+
+        .card h2{
+
+            color:#58a6ff;
+            margin-bottom:10px;
+        }
+
+        .detector-box{
+
+            background:#161b22;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 20px rgba(0,0,0,0.5);
+        }
+
+        textarea{
+
+            width:100%;
+            height:220px;
+            padding:15px;
+            background:#0d1117;
+            color:white;
+            border:2px solid #30363d;
+            border-radius:10px;
+            font-size:16px;
+        }
+
+        textarea:focus{
+
+            outline:none;
+            border-color:#58a6ff;
+        }
+
+        .analyse-btn{
+
+            margin-top:20px;
+            padding:15px 30px;
+            background:#238636;
+            color:white;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        .analyse-btn:hover{
+
+            background:#2ea043;
+            transform:scale(1.05);
+        }
+
+        .result{
+
+            margin-top:30px;
+            padding:25px;
+            border-radius:10px;
+            text-align:center;
+            animation:glow 1s infinite alternate;
+        }
+
+        .phishing{
+
+            background:#ff000020;
+            border:2px solid red;
+            color:red;
+        }
+
+        .safe{
+
+            background:#00ff0020;
+            border:2px solid lime;
+            color:lime;
+        }
+
+        @keyframes glow{
+
+            from{
+                box-shadow:0 0 10px;
+            }
+
+            to{
+                box-shadow:0 0 25px;
+            }
+        }
+
+        .features{
+
+            margin-top:50px;
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+        }
+
+        .feature-card{
+
+            background:#161b22;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .feature-card:hover{
+
+            transform:translateY(-10px);
+            background:#21262d;
+        }
+
+        .feature-card h3{
+
+            color:#58a6ff;
+            margin-bottom:10px;
+        }
+
+        .footer{
+
+            margin-top:50px;
+            padding:20px;
+            text-align:center;
+            background:#161b22;
+            border-top:2px solid #30363d;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <h1>AI Cyber Threat Detection System</h1>
+
+        <div class="nav-links">
+
+            <button>Dashboard</button>
+
+            <button>Threat Logs</button>
+
+            <button>AI Reports</button>
+
+            <button>Settings</button>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTAINER -->
+
+    <div class="container">
+
+        <!-- DASHBOARD -->
+
+        <div class="dashboard">
+
+            <div class="card">
+
+                <h2>AI Status</h2>
+
+                <p>ACTIVE</p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Threat Detection</h2>
+
+                <p>REAL-TIME</p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>System Security</h2>
+
+                <p>HIGH</p>
+
+            </div>
+
+        </div>
+
+        <!-- EMAIL DETECTOR -->
+
+        <div class="detector-box">
+
+            <h1>AI Phishing Email Detector</h1>
+
+            <br>
+
+            <form action="/predict" method="POST">
+
+                <textarea
+                    name="email"
+                    placeholder="Paste suspicious email here..."
+                    required
+                ></textarea>
+
+                <br>
+
+                <button class="analyse-btn" type="submit">
+
+                    Analyse Email
+
+                </button>
+
+            </form>
+
+            <!-- RESULT -->
+
+            {% if prediction %}
+
+                <!-- PHISHING -->
+
+                {% if "PHISHING" in prediction %}
+
+                    <div class="result phishing">
+
+                        <h1>{{ prediction }}</h1>
+
+                        <br>
+
+                        <h2>
+
+                            Phishing Confidence:
+                            {{ phishing_confidence }}%
+
+                        </h2>
+
+                        <br>
+
+                        <h2>
+
+                            Safe Confidence:
+                            {{ safe_confidence }}%
+
+                        </h2>
+
+                        <br>
+
+                        <h2>
+
+                            Threat Level:
+                            {{ threat_level }}
+
+                        </h2>
+
+                        <br>
+
+                        <h3>
+
+                            AI Analysis
+
+                        </h3>
+
+                        <br>
+
+                        <p>
+
+                            Suspicious keywords, urgent language,
+                            fake authentication requests,
+                            and phishing indicators detected.
+
+                        </p>
+
+                    </div>
+
+                <!-- SAFE -->
+
+                {% else %}
+
+                    <div class="result safe">
+
+                        <h1>{{ prediction }}</h1>
+
+                        <br>
+
+                        <h2>
+
+                            Safe Confidence:
+                            {{ safe_confidence }}%
+
+                        </h2>
+
+                        <br>
+
+                        <h2>
+
+                            Phishing Confidence:
+                            {{ phishing_confidence }}%
+
+                        </h2>
+
+                        <br>
+
+                        <h2>
+
+                            Threat Level:
+                            {{ threat_level }}
+
+                        </h2>
+
+                        <br>
+
+                        <h3>
+
+                            AI Analysis
+
+                        </h3>
+
+                        <br>
+
+                        <p>
+
+                            No phishing patterns or malicious
+                            cyber threat indicators detected.
+
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+            {% endif %}
+
+        </div>
+
+        <!-- FEATURES -->
+
+        <div class="features">
+
+            <div class="feature-card">
+
+                <h3>AI Detection</h3>
+
+                <p>
+
+                    Machine learning based phishing analysis.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Threat Monitoring</h3>
+
+                <p>
+
+                    Detects suspicious cyber activities instantly.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Email Analysis</h3>
+
+                <p>
+
+                    Analyses malicious keywords and phishing patterns.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Cyber Dashboard</h3>
+
+                <p>
+
+                    Advanced cybersecurity monitoring interface.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <h3>
+
+            AI-Powered Cybersecurity Project
+
+        </h3>
+
+        <br>
+
+        <p>
+
+            Developed using Flask, Machine Learning,
+            Scikit-learn, SQLAlchemy, HTML, and CSS.
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
