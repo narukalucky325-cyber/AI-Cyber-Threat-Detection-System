@@ -1,9 +1,7 @@
 <h1>🛡️ AI Cyber Threat Detection System</h1><br><br>
-
 <h2>📌 Overview</h2><br>
 The AI Cyber Threat Detection System is a machine learning–powered cybersecurity web application designed to detect phishing emails and malicious content in real time.<br>
 It uses Flask as backend and a trained ML model to classify input text as Safe or Phishing threat with confidence scoring.<br><br>
-
 <h2>🚀 Features</h2><br>
 📧 Detects phishing emails using Machine Learning<br>
 ⚡ Real-time prediction system<br>
@@ -13,7 +11,6 @@ It uses Flask as backend and a trained ML model to classify input text as Safe o
 🧠 ML-based text vectorization & prediction<br>
 📈 Confidence score output (Safe vs Phishing)<br>
 💡 Simple and user-friendly UI<br><br>
-
 <h2>🧰 Technologies Used</h2><br>
 Python 🐍<br>
 Flask 🌐<br>
@@ -50,21 +47,6 @@ Model predicts phishing probability<br>
 Result displayed with confidence score<br>
 ↓<br>
 Data stored in SQLite database<br><br>
-
-<h2>📸 Screenshots</h2><br>
-
-👉 Add screenshots like this:<br><br>
-
-<b>Home Page</b><br>
-<img src="static/home.png" width="600"><br><br>
-
-<b>Prediction Result</b><br>
-<img src="static/result.png" width="600"><br><br>
-
-⚠️ Replace images inside <b>static/</b> folder:<br>
-home.png<br>
-result.png<br><br>
-
 <h2>🔐 Importance of This Project</h2><br>
 ✔ Helps detect phishing attacks early<br>
 ✔ Useful for cybersecurity awareness<br>
