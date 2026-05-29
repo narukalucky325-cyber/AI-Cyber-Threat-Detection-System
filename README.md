@@ -46,6 +46,22 @@ Model predicts phishing probability<br>
 ↓<br>
 Result displayed with confidence score<br>
 ↓<br>
+<h2>📧 Example Inputs (Test Cases)</h2><br>
+
+<h3>🚨 Phishing Email Examples</h3><br>
+⚠️ Example 1:<br>
+URGENT: Your bank account has been suspended. Verify immediately using the link below or your account will be blocked.<br><br>
+⚠️ Example 2:<br>
+Congratulations! You have won $10,000. Click here to claim your prize instantly.<br><br>
+⚠️ Example 3:<br>
+Your Gmail password has expired. Login now to avoid permanent account deletion.<br><br>
+<h3>✅ Safe Email Examples</h3><br>
+✔ Example 1:<br>
+Team meeting is scheduled tomorrow at 10 AM in the conference room.<br><br>
+✔ Example 2:<br>
+Please find attached the project report for your review.<br><br>
+✔ Example 3:<br>
+Your order has been successfully delivered. Thank you for shopping with us.<br><br>
 Data stored in SQLite database<br><br>
 <h2>🔐 Importance of This Project</h2><br>
 ✔ Helps detect phishing attacks early<br>
